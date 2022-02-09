@@ -1,0 +1,22 @@
+{
+    "tasks":[
+        {
+            "id": 1,
+            "text": "Conta de luz",
+            "day": "16 fev de 2022 as 18:40pm",
+            "reminder": true
+        },
+        {
+            "id": 2,
+            "text": "Conta de Internet",
+            "day": "15 abr de 2022 as 13:40pm",
+            "reminder": false
+        },
+        {
+            "id": 3,
+            "text": "Aluguel",
+            "day": "08 jul de 2022 as 8:10pm",
+            "reminder": true
+        }
+    ]
+}
