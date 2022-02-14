@@ -2,7 +2,9 @@ import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { from, of } from 'rxjs';
 import { TaskItemComponent } from '../task-item/task-item.component';
+import { UiService } from 'src/app/services/ui.service';
 import {Task} from '../../Task';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-task',
@@ -15,7 +17,12 @@ export class AddTaskComponent implements OnInit {
   text!: string;
   day!: string;
   reminder:boolean = false;
-  constructor() { }
+  showAddTask: boolean = false;
+  subscription: Subscription = new Subscription;
+
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService.onToggle().subscribe((value => this.showAddTask = value));
+  }
 
   ngOnInit(): void {
   }
